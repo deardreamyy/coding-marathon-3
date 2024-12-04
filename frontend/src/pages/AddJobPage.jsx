@@ -9,8 +9,8 @@ const AddJobPage = () => {
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [location, setLocation] = useState("");
-  const [salary, setSalary] = useState("Under $50K");
-  const [status, setStatus] = useState("Open");
+  const [salary, setSalary] = useState("");
+  const [status, setStatus] = useState("open");
   const [applicationDeadline, setApplicationDeadline] = useState("");
   const [requirements, setRequirements] = useState("");
   const [website, setWebsite] = useState("");
@@ -126,19 +126,13 @@ const AddJobPage = () => {
           onChange={(e) => setLocation(e.target.value)}
         />
         <label>Salary:</label>
-        <select value={salary} onChange={(e) => setSalary(e.target.value)}>
-          <option value="Under $50K">Under $50K</option>
-          <option value="$50K - 60K">$50K - $60K</option>
-          <option value="$60K - 70K">$60K - $70K</option>
-          <option value="$70K - 80K">$70K - $80K</option>
-          <option value="$80K - 90K">$80K - $90K</option>
-          <option value="$90K - 100K">$90K - $100K</option>
-          <option value="$100K - 125K">$100K - $125K</option>
-          <option value="$125K - 150K">$125K - $150K</option>
-          <option value="$150K - 175K">$150K - $175K</option>
-          <option value="$175K - 200K">$175K - $200K</option>
-          <option value="Over $200K">Over $200K</option>
-          </select>
+        <input
+          type="number"
+          required
+          value={salary}
+          onChange={(e) => setSalary(e.target.value)}
+          placeholder="Enter salary in numbers"
+        />
           <label>Application Deadline:</label>
           <input
             type="date"
@@ -153,8 +147,8 @@ const AddJobPage = () => {
           ></textarea>
           <label>Status:</label>
           <select value={status} onChange={(e) => setStatus(e.target.value)}>
-            <option value="Open">Open</option>
-            <option value="Closed">Closed</option>
+            <option value="open">Open</option>
+            <option value="closed">Closed</option>
           </select>
         <button>Add Job</button>
       </form>
