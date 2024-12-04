@@ -24,8 +24,21 @@
   margin-left: 16px;
   text-decoration: none;
   padding: 6px;
+  font-size: medium;
 }
 .navbar a:hover {
+  color: #f1356d;
+}
+
+.navbar button {
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+  border: none;
+  background: none;
+  font-size: medium;
+}
+.navbar button:hover {
   color: #f1356d;
 }
 .content {
@@ -92,6 +105,8 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 /* create new job form */

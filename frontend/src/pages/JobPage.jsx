@@ -64,7 +64,7 @@ const JobPage = () => {
   };
 
   return (
-    <div className="job-preview">
+    <div className="job-details">
       {loading ? (
         <p>Loading...</p>
       ) : error ? (

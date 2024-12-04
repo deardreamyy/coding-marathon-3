@@ -36,11 +36,11 @@ const App = () => {
             <Route path="/jobs/:id" element={<JobPage />} />
             <Route
               path="/jobs/add-job"
-              element={isAuthenticated ? <AddJobPage /> : <Navigate to="/signup" />}
+              element={isAuthenticated ? <AddJobPage /> : <Navigate to="/login" />}
             />
             <Route
               path="/jobs/edit-job/:id"
-              element={isAuthenticated ? <EditJobPage /> : <Navigate to="/signup" />}
+              element={isAuthenticated ? <EditJobPage /> : <Navigate to="/login" />}
             />
             <Route
               path="/signup"
