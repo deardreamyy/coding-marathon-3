@@ -25,6 +25,8 @@ const EditJobPage = () => {
 
 
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("user"));
+  const token = user ? user.token : null;
 
   const updateJob = async (job) => {
     try {
@@ -32,6 +34,7 @@ const EditJobPage = () => {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(job),
       });
@@ -182,13 +185,6 @@ const EditJobPage = () => {
                 required
                 value={salary}
                 onChange={(e) => setSalary(e.target.value)}
-            />
-            <label>Posted Date: </label>
-            <input
-                type="text"
-                required
-                value={postedDate}
-                onChange={(e) => setPostedDate(e.target.value)}
             />
             <label>Status: </label>
             <select value={status} onChange={(e) => setStatus(e.target.value)}>

@@ -9,13 +9,16 @@ const AddJobPage = () => {
   const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState("");
   const [location, setLocation] = useState("");
-  const [salary, setSalary] = useState("");
-  const [status, setStatus] = useState("");
+  const [salary, setSalary] = useState("Under $50K");
+  const [status, setStatus] = useState("Open");
   const [applicationDeadline, setApplicationDeadline] = useState("");
   const [requirements, setRequirements] = useState("");
   const [website, setWebsite] = useState("");
+  const [postedDate, setPostedDate] = useState(Date.now());
 
   const navigate = useNavigate();
+  /*const user = JSON.parse(localStorage.getItem("user"));
+  const token = user ? user.token : null;*/
  
   const addJob = async (newJob) => {
     try {
@@ -23,6 +26,7 @@ const AddJobPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+         // Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(newJob),
       });
