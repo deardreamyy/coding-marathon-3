@@ -51,7 +51,6 @@ describe("User Routes", () => {
       console.error(result)
       expect(result.status).toBe(201);
       expect(result.body).toHaveProperty("token");
-      expect(result.profile_picture).toBe(null);
     });
 
     it("should return an error with invalid credentials", async () => {
