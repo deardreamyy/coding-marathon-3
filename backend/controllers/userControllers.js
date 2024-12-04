@@ -19,7 +19,7 @@ const signupUser = async (req, res) => {
     date_of_birth,
     membership_status,
     address,
-    profile_picture,
+    profile_picture
   } = req.body;
   try {
     if (
