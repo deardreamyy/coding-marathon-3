@@ -17,8 +17,8 @@ const AddJobPage = () => {
   const [postedDate, setPostedDate] = useState(Date.now());
 
   const navigate = useNavigate();
-  /*const user = JSON.parse(localStorage.getItem("user"));
-  const token = user ? user.token : null;*/
+  const user = JSON.parse(localStorage.getItem("user"));
+  const token = user ? user.token : null;
  
   const addJob = async (newJob) => {
     try {
@@ -26,7 +26,7 @@ const AddJobPage = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-         // Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(newJob),
       });
