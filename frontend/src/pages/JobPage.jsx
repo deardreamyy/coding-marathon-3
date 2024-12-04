@@ -10,8 +10,17 @@ const JobPage = () => {
 
   const deleteJob = async (id) => {
     try {
+      try {
+        const token = JSON.parse(localStorage.getItem("user")).token;
+        if (!token) {
+            throw new Error("Not authorized");
+        }
       const res = await fetch(`/api/jobs/${id}`, {
         method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,	
+        }
       });
       if (!res.ok) {
         throw new Error("Failed to delete job");
@@ -20,7 +29,10 @@ const JobPage = () => {
     } catch (error) {
       console.error("Error deleting job:", error);
     }
-  };
+  } catch (error) {
+    console.error("Error deleting job: ", error.message);
+  }
+};
 
   useEffect(() => {
     const fetchJob = async () => {
@@ -73,7 +85,7 @@ const JobPage = () => {
           <p>Application Deadline: {job.applicationDeadline}</p>
           <p>Requirements: {job.requirements}</p>
           <button onClick={() => onDeleteClick(job._id)}>delete</button>
-          <button onClick={() => navigate(`/edit-job/${job._id}`)}>edit</button>
+          <button onClick={() => navigate(`/jobs/edit-job/${job._id}`)}>edit</button>
         </>
       )}
     </div>
