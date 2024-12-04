@@ -5,25 +5,29 @@ import { useNavigate } from "react-router-dom";
 const Signup = () => {
   const navigate = useNavigate();
   const name = useField("text");  
-  const email = useField("email");
+  const username = useField("text");
   const password = useField("password");
   const phoneNumber = useField("text");
   const gender = useField("text");
   const dateOfBirth = useField("date");
+  const adress = useField("text");
   const membershipStatus = useField("text");
+  const profilePicture = useField("text");
 
   const { signup, error } = useSignup("/api/users/signup");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     await signup({
-      email: email.value,
-      password: password.value,
       name: name.value,
+      username: username.value,
+      password: password.value,
       phone_number: phoneNumber.value,
       gender: gender.value,
       date_of_birth: dateOfBirth.value,
       membership_status: membershipStatus.value,
+      address: adress.value,
+      profile_picture: profilePicture.value,
     });
     if (!error) {
       console.log("success");
@@ -37,8 +41,8 @@ const Signup = () => {
       <form onSubmit={handleFormSubmit}>
         <label>Name:</label>
         <input {...name} />
-        <label>Email address:</label>
-        <input {...email} />
+        <label>Username:</label>
+        <input {...username} />
         <label>Password:</label>
         <input {...password} />
         <label>Phone Number:</label>
@@ -49,6 +53,10 @@ const Signup = () => {
         <input {...dateOfBirth} />
         <label>Membership Status:</label>
         <input {...membershipStatus} />
+        <label>Address:</label>
+        <input {...adress} />
+        <label>Profile Picture:</label>
+        <input {...profilePicture} />
         <button>Sign up</button>
       </form>
     </div>

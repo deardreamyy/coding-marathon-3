@@ -9,6 +9,7 @@ import JobPage from "./pages/JobPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import EditJobPage from "./pages/EditJobPage";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(() => {
@@ -36,6 +37,10 @@ const App = () => {
             <Route
               path="/jobs/add-job"
               element={isAuthenticated ? <AddJobPage /> : <Navigate to="/signup" />}
+            />
+            <Route
+              path="/jobs/edit-job/:id"
+              element={isAuthenticated ? <EditJobPage /> : <Navigate to="/signup" />}
             />
             <Route
               path="/signup"
