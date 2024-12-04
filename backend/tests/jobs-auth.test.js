@@ -133,8 +133,8 @@ describe("Given there are initially some jobs saved", () => {
     const updatedJobCheck = await Job.findById(job._id);
     console.log("Updated job:", updatedJobCheck);
   
-    expect(updatedJobCheck.info).toBe(updatedJob.info);
-    expect(updatedJobCheck.price).toBe(updatedJob.price);
+    expect(updatedJobCheck.title).toBe(updatedJob.title);
+    expect(updatedJobCheck.type).toBe(updatedJob.type);
   });
   
 
