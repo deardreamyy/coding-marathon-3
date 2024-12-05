@@ -7,7 +7,7 @@ const Login = ({ setIsAuthenticated }) => {
   const username = useField("username");
   const password = useField("password");
 
-  const { login, error } = useLogin("https://cm3-apiv2.onrender.com/api/users/login");
+  const { login, error } = useLogin("/api/users/login");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

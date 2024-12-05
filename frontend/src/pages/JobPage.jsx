@@ -38,7 +38,7 @@ const JobPage = () => {
     const fetchJob = async () => {
       try {
         console.log("id: ", id);
-        const res = await fetch(`https://cm3-apiv2.onrender.com/api/jobs/${id}`);
+        const res = await fetch(`/api/jobs/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }

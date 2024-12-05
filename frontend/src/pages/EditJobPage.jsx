@@ -30,7 +30,7 @@ const EditJobPage = () => {
 
   const updateJob = async (job) => {
     try {
-      const res = await fetch(`https://cm3-apiv2.onrender.com/api/jobs/${id}`, {
+      const res = await fetch(`/api/jobs/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

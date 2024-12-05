@@ -9,7 +9,7 @@ const Home = () => {
   useEffect(() => {
     const fetchJobs = async () => {
       try {
-        const res = await fetch("https://cm3-apiv2.onrender.com/api/jobs/");
+        const res = await fetch("/api/jobs/");
         if (!res.ok) {
           throw new Error("could not fetch the data for that resource");
         }
