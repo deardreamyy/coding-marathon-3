@@ -9,7 +9,7 @@ const cors = require("cors");
 
 // Middlewares
 const corsOptions = {
-    origin: 'https://coding-marathon-3.onrender.com', // Replace with your deployed frontend URL
+    origin: 'https://cm3-apiv2.onrender.com/',
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true, // Allow cookies if needed
   };
