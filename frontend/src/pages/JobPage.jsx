@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
+
 const JobPage = () => {
   const navigate = useNavigate();
   const { id } = useParams();
@@ -15,7 +16,7 @@ const JobPage = () => {
         if (!token) {
             throw new Error("Not authorized");
         }
-      const res = await fetch(`https://cm3-apiv2.onrender.com/api/jobs/${id}`, {
+      const res = await fetch(`/api/jobs/${id}`, {
         method: "DELETE",
         headers: {
           "Content-Type": "application/json",

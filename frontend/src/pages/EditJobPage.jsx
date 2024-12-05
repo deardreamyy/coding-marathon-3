@@ -24,6 +24,7 @@ const EditJobPage = () => {
   const [requirements, setRequirements] = useState("");
 
 
+
   const navigate = useNavigate();
   const user = JSON.parse(localStorage.getItem("user"));
   const token = user ? user.token : null;
@@ -50,7 +51,7 @@ const EditJobPage = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`https://cm3-apiv2.onrender.com/api/jobs/${id}`);
+        const res = await fetch(`/api/jobs/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
