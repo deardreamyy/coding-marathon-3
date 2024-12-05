@@ -14,7 +14,7 @@ const Signup = () => {
   const membershipStatus = useField("text");
   const profilePicture = useField("text");
 
-  const { signup, error } = useSignup("/api/users/signup");
+  const { signup, error } = useSignup("https://cm3-apiv1.onrender.com/api/jobs/${id}");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

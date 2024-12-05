@@ -22,7 +22,7 @@ const AddJobPage = () => {
  
   const addJob = async (newJob) => {
     try {
-      const res = await fetch("/api/jobs", {
+      const res = await fetch("https://cm3-apiv1.onrender.com/api/jobs/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

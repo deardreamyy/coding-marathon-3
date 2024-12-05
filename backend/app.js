@@ -8,7 +8,13 @@ const connectDB = require("./config/db");
 const cors = require("cors");
 
 // Middlewares
-app.use(cors())
+const corsOptions = {
+    origin: 'https://coding-marathon-3.onrender.com', // Replace with your deployed frontend URL
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    credentials: true, // Allow cookies if needed
+  };
+  
+app.use(cors(corsOptions));
 app.use(express.json());
 
 connectDB();
