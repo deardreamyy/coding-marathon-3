@@ -1,11 +1,13 @@
 import useField from "../hooks/useField";
 import useLogin from "../hooks/useLogin";
 import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 const Login = ({ setIsAuthenticated }) => {
   const navigate = useNavigate();
   const username = useField("username");
   const password = useField("password");
+  const { id } = useParams();
 
   const { login, error } = useLogin(`https://cm3-apiv1.onrender.com/api/jobs/${id}`);
 
