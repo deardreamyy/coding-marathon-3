@@ -1,7 +1,6 @@
 import useField from "../hooks/useField";
 import useSignup from "../hooks/useSignup";
 import { useNavigate } from "react-router-dom"
-import { useParams } from "react-router-dom";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -14,9 +13,8 @@ const Signup = () => {
   const adress = useField("text");
   const membershipStatus = useField("text");
   const profilePicture = useField("text");
-  const { id } = useParams();
 
-  const { signup, error } = useSignup(`https://cm3-apiv1.onrender.com/api/jobs/${id}`);
+  const { signup, error } = useSignup("https://cm3-apiv2.onrender.com/api/users/signup");
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();

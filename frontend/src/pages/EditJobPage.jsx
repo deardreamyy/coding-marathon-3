@@ -30,7 +30,7 @@ const EditJobPage = () => {
 
   const updateJob = async (job) => {
     try {
-      const res = await fetch(`https://cm3-apiv1.onrender.com/api/jobs/${id}`, {
+      const res = await fetch(`https://cm3-apiv2.onrender.com/api/jobs/${id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -50,7 +50,7 @@ const EditJobPage = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
-        const res = await fetch(`https://cm3-apiv1.onrender.com/api/jobs/${id}`);
+        const res = await fetch(`https://cm3-apiv2.onrender.com/api/jobs/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
