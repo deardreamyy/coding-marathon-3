@@ -8,7 +8,7 @@ import AddJobPage from "./pages/AddJobPage";
 import JobPage from "./pages/JobPage";
 import NotFoundPage from "./pages/NotFoundPage";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Signup from "./pages/SignUp";
 import EditJobPage from "./pages/EditJobPage";
 
 const App = () => {
