@@ -1,11 +1,13 @@
 ## Contributions
 
-| Member Name  | Tasks Completed   | Contribution (%) |
-|--------------|---------------------------------------------|
-| Veera | Backend v1 and v2 work alongside Lasse. Main contributor of backend deployment |25%|
-| Lasse | Backend v1 and v2 work alongside Veera. Main contributor of backend self-reflection |25%|
-| Karoliina | Frontend V1 & V2. Signup, useSignup, useField, EditJobPage, minor UI changes (for example button css fix), frontend V1 deployment, self assessment. | 25% |
-| Hilda | Frontend V1 & V2. LogIn, useLogin, AddJobPage, authorization, frontend V2 deployment, self assessment. | 25% |
+
+| Member Name | Tasks Completed                                                                      | Contribution (%) |
+|-------------|--------------------------------------------------------------------------------------|------------------|
+| Veera       | Backend v1 and v2 work alongside Lasse. Main contributor to backend deployment      | 25%             |
+| Lasse       | Backend v1 and v2 work alongside Veera. Main contributor to backend self-reflection | 25%             |
+| Karoliina   | Frontend V1 & V2: Signup, useSignup, useField, EditJobPage, minor UI changes (e.g., button CSS fix), frontend V1 deployment, self-assessment. All frontend tasks were distributed evenly. | 25% |
+| Hilda       | Frontend V1 & V2: LogIn, useLogin, AddJobPage, authorization, frontend V2 deployment, self-assessment. All frontend tasks were distributed evenly. | 25% |
+
 
 
 ## Self-grading
