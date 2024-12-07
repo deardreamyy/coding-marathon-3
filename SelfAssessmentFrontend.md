@@ -1,5 +1,73 @@
 ## Self Assessment
 
+### useField Hook
+
+```
+useField.jsx
+import { useState } from "react";
+
+export default function useField(type) {
+  const [value, setValue] = useState("");
+
+  const onChange = (e) => {
+    setValue(e.target.value);
+  };
+
+  return { type, value, onChange };
+};
+```
+
+#### Functionality
+- **Purpose**: The useFieldhook is designed to manage the state and handle changes for form input fields.
+- **Usage**: It is used in the Login and Signup components to manage the state of the username and password input fields.
+
+#### Code Quality
+- **Simplicity**: The hook is simple and easy to understand. It uses the useState hook to manage the value of the input field and provides an onChange handler to update the state when the input value changes.
+- **Reusability**: The hook is reusable for any input field by simply passing the input type as an argument.
+- **Readability**: The code is clean and well-structured, making it easy to read and maintain.
+
+#### Performance
+- **Efficiency**: The hook efficiently manages the state of the input field without any unnecessary re-renders or performance bottlenecks.
+
+#### Example Usage
+Here is an example of how the useField hook is used in the Login component:
+
+```
+Login.jsx
+const Login = ({ setIsAuthenticated }) => {
+  const navigate = useNavigate();
+  const username = useField("username");
+  const password = useField("password");
+
+  const { login, error } = useLogin("/api/users/login");
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+    await login({ username: username.value, password: password.value });
+    if (!error) {
+      console.log("success");
+      setIsAuthenticated(true);
+      navigate("/");
+    }
+  };
+
+  return (
+    <div className="create">
+      <h2>Login</h2>
+      <form onSubmit={handleFormSubmit}>
+        <label>Username:</label>
+        <input {...username} />
+        <label>Password:</label>
+        <input {...password} />
+        <button>Log in</button>
+      </form>
+    </div>
+  );
+};
+```
+
+In this example, the useField hook is used to manage the state of the username and password input fields, making the Login component more concise and easier to manage.
+
 ### Login
 
 This code demonstrates a structured approach to implementing a useLogin hook and a Login component for handling user authentication.
