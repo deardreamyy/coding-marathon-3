@@ -39,7 +39,7 @@ const AddJobPage = () => {
 
   const submitForm = (e) => {
     e.preventDefault();
-    const postedDate = Date.now();
+    const postedDate = Date.now;
 
     const newJob = {
       title,
