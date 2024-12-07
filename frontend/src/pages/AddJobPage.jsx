@@ -18,9 +18,9 @@ const AddJobPage = () => {
   const navigate = useNavigate();
  
   const addJob = async (newJob) => {
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/jobs/`, {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+      const res = await fetch(`${API_BASE_URL}api/jobs/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

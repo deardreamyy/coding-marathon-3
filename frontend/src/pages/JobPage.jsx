@@ -9,9 +9,9 @@ const JobPage = () => {
   const [error, setError] = useState(null);
 
   const deleteJob = async (id) => {
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     try {
-      const res = await fetch(`${API_BASE_URL}/api/jobs/${id}`, {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
+      const res = await fetch(`${API_BASE_URL}api/jobs/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {
@@ -26,8 +26,9 @@ const JobPage = () => {
   useEffect(() => {
     const fetchJob = async () => {
       try {
+        const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
         console.log("id: ", id);
-        const res = await fetch(`/api/jobs/${id}`);
+        const res = await fetch(`${API_BASE_URL}api/jobs/${id}`);
         if (!res.ok) {
           throw new Error("Network response was not ok");
         }
