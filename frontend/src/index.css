@@ -92,6 +92,8 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+  margin-top: 1rem;
+  margin-right: 1rem;
 }
 
 /* create new job form */
