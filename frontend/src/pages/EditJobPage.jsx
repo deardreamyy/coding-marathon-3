@@ -27,8 +27,9 @@ const EditJobPage = () => {
   const navigate = useNavigate();
 
   const updateJob = async (job) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     try {
-      const res = await fetch(`/api/jobs/${job.id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/jobs/${job.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",

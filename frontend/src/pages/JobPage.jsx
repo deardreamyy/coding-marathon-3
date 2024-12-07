@@ -9,8 +9,9 @@ const JobPage = () => {
   const [error, setError] = useState(null);
 
   const deleteJob = async (id) => {
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
     try {
-      const res = await fetch(`/api/jobs/${id}`, {
+      const res = await fetch(`${API_BASE_URL}/api/jobs/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {

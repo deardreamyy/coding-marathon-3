@@ -8,8 +8,9 @@ const Home = () => {
 
   useEffect(() => {
     const fetchJobs = async () => {
+      const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
       try {
-        const res = await fetch("api/jobs");
+        const res = await fetch("${API_BASE_URL}api/jobs");
         if (!res.ok) {
           throw new Error("could not fetch the data for that resource");
         }
